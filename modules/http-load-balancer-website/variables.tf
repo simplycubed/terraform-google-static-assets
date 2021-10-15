@@ -174,3 +174,8 @@ variable "custom_headers" {
   default     = []
 }
 
+variable "default_host_redirect" {
+  description = "The target host of a host redirect site"
+  type        = string
+  default     = ""
+}

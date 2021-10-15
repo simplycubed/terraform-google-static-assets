@@ -18,6 +18,8 @@ locals {
   # We have to use dashes instead of dots in the bucket name, because
   # that bucket is not a website
   website_domain_name_dashed = replace(var.website_domain_name, ".", "-")
+
+  redirect_website = length(var.default_host_redirect) > 0
 }
 
 module "load_balancer" {
@@ -47,7 +49,15 @@ resource "google_compute_url_map" "urlmap" {
   name        = "${local.website_domain_name_dashed}-url-map"
   description = "URL map for ${local.website_domain_name_dashed}"
 
-  default_service = google_compute_backend_bucket.static.self_link
+  default_service = local.redirect_website ? google_compute_backend_bucket.static.self_link : null
+
+  dynamic "default_url_redirect" {
+    for_each = local.redirect_website ? ["default_redirect"] : []
+    content {
+      host_redirect = length(var.default_host_redirect) > 0 ? var.default_host_redirect : null
+      strip_query   = false
+    }
+  }
 }
 
 # ------------------------------------------------------------------------------
@@ -55,6 +65,8 @@ resource "google_compute_url_map" "urlmap" {
 # ------------------------------------------------------------------------------
 
 resource "google_compute_backend_bucket" "static" {
+  count = local.redirect_website ? 0 : 1
+
   provider = google-beta
   project  = var.project
 
@@ -69,6 +81,8 @@ resource "google_compute_backend_bucket" "static" {
 # ------------------------------------------------------------------------------
 
 module "site_bucket" {
+  count = local.redirect_website ? 0 : 1
+
   source = "../cloud-storage-static-website"
 
   project = var.project
