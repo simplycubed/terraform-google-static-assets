@@ -78,3 +78,4 @@ During initial development, the major version will be 0 (e.g., `0.x.y`), which i
 ## License
 
 Please see [LICENSE.txt](https://github.com/simplycubed/terraform-google-static-assets/blob/master/LICENSE.txt) for details on how the code in this repo is licensed.
+
