@@ -3,11 +3,11 @@ Have any questions?
 Note: Remember to add '[WIP]' to the beginning of the title if this PR is still a work-in-progress. Remove it when it is ready for review!
 -->
 
-## Description
+# Description
 
 <!-- Write a brief description of the changes introduced by this PR -->
 
-### Documentation
+## Documentation
 
 <!--
   If this is a feature PR, then where is it documented?
@@ -31,7 +31,6 @@ Please ensure all of these TODOs are completed before asking for a review.
 - [ ] Run the relevant tests successfully.
 - [ ] Ensure any 3rd party code adheres with our license policy or delete this line if its not applicable.
 
-
 ## Related Issues
 
 <!--
@@ -40,4 +39,3 @@ Please ensure all of these TODOs are completed before asking for a review.
   e.g. Addresses #1234
   e.g. Related to #1234
 -->
-

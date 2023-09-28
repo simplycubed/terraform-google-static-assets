@@ -1,10 +1,8 @@
+# Static Assets Modules
+
 [![Maintained by SimplyCubed.com](https://img.shields.io/badge/maintained%20by-simplycubed.com-%235849a6.svg)](https://simplycubed.com/?ref=repo_google_static_assets)
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/simplycubed/terraform-google-static-assets.svg?label=latest)](https://github.com/simplycubed/terraform-google-static-assets/releases/latest)
 ![Terraform Version](https://img.shields.io/badge/tf-%3E%3D1.0.x-blue.svg)
-
-<!-- NOTE: Because the module is published to Terraform Module Registry, we have to use absolute links in all READMEs. -->
-
-# Static Assets Modules
 
 This repo contains modules for managing static assets (CSS, JS, images) in GCP.
 

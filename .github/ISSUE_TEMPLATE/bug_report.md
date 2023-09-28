@@ -7,11 +7,6 @@ assignees: ''
 
 ---
 
-<!--
-Have any questions? Check out the contributing docs at https://gruntwork.notion.site/Gruntwork-Coding-Methodology-02fdcd6e4b004e818553684760bf691e,
-or ask in this issue and a Gruntwork core maintainer will be happy to help :)
--->
-
 **Describe the bug**
 A clear and concise description of what the bug is.
 
@@ -31,4 +26,3 @@ A clear and concise description of what you expected to happen.
 
 **Additional context**
 Add any other context about the problem here.
-
