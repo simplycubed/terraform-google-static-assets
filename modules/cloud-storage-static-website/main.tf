@@ -20,6 +20,7 @@ terraform {
 locals {
   # We have to use dashes instead of dots in the access log bucket, because that bucket is not a website
   website_domain_name_dashed = replace(var.website_domain_name, ".", "-")
+  bucket_name                = var.bucket_name == "" ? var.website_domain_name : var.bucket_name
   access_log_kms_keys        = var.access_logs_kms_key_name == "" ? [] : [var.access_logs_kms_key_name]
   website_kms_keys           = var.website_kms_key_name == "" ? [] : [var.website_kms_key_name]
 }
@@ -92,7 +93,7 @@ resource "google_storage_bucket" "access_logs" {
   project = var.project
 
   # Use the dashed domain name
-  name          = "${local.website_domain_name_dashed}-logs"
+  name         = var.bucket_name == "" ? "${local.website_domain_name_dashed}-logs" : "${var.bucket_name}-logs"
   location      = var.website_location
   storage_class = var.website_storage_class
 

@@ -174,3 +174,8 @@ variable "custom_headers" {
   default     = []
 }
 
+variable bucket_name{
+   description = "name of bucket(if provided) otherwise dashed website domain name is used"
+   default     = ""
+}
+

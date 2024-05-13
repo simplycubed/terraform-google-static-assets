@@ -72,7 +72,7 @@ module "site_bucket" {
   source = "../cloud-storage-static-website"
 
   project = var.project
-
+  bucket_name           = var.bucket_name
   website_domain_name   = local.website_domain_name_dashed
   website_acls          = var.website_acls
   website_location      = var.website_location
