@@ -34,7 +34,7 @@ resource "google_storage_bucket" "website" {
 
   project = var.project
 
-  name          = var.website_domain_name
+  name          = local.bucket_name
   location      = var.website_location
   storage_class = var.website_storage_class
 
