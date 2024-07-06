@@ -17,6 +17,11 @@ variable "website_domain_name" {
 # OPTIONAL MODULE PARAMETERS
 # These variables have defaults, but may be overridden by the operator.
 # ---------------------------------------------------------------------------------------------------------------------
+variable bucket_name{
+   description = "name of bucket(if provided) otherwise dashed website domain name is used"
+   default     = ""
+}
+
 variable "website_location" {
   description = "Location of the bucket that will store the static website. Once a bucket has been created, its location can't be changed. See https://cloud.google.com/storage/docs/bucket-locations"
   type        = string

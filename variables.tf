@@ -28,16 +28,15 @@ variable "dns_managed_zone_name" {
 # These variables have defaults, but may be overridden by the operator.
 # ---------------------------------------------------------------------------------------------------------------------
 
+variable "bucket_name" {
+  description = "name of bucket(if provided) otherwise dashed website domain name is used"
+  default     = ""
+}
+
 variable "dns_record_ttl" {
   description = "The time-to-live for the site CNAME record set (seconds)"
   type        = number
   default     = 60
-}
-
-variable "bucket_name" {
-  description = "The name of the bucket that will store the static website. This value can be used to override the generated bucket name based on website_domain_name"
-  type        = string
-  default     = ""
 }
 
 variable "website_location" {
