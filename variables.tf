@@ -34,6 +34,12 @@ variable "dns_record_ttl" {
   default     = 60
 }
 
+variable "bucket_name" {
+  description = "The name of the bucket that will store the static website. This value can be used to override the generated bucket name based on website_domain_name"
+  type        = string
+  default     = ""
+}
+
 variable "website_location" {
   description = "Location of the bucket that will store the static website. Once a bucket has been created, its location can't be changed. See https://cloud.google.com/storage/docs/bucket-locations"
   type        = string
